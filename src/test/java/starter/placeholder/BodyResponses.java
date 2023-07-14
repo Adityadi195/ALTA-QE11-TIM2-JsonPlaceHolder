@@ -9,4 +9,5 @@ public class BodyResponses {
     public static String TITLE = "title";
     public static String BODY = "body";
     public static String EMAIL = "email";
+    public static String USERNAME = "username";
 }
