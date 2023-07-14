@@ -11,7 +11,7 @@ public class JsonPlaceHolderAPI {
     public static String POSTS_PATH = Constants.BASE_URL + "/posts";
     public static String POSTS_PARAM = Constants.BASE_URL + "/posts/{param}";
     public static String COMMENTS_PATH = Constants.BASE_URL + "/comments";
-    public static String COMMENTS_PARAM = Constants.BASE_URL + "/comments/{id}";
+    public static String COMMENTS_PARAM = Constants.BASE_URL + "/comments/{param}";
     public static String USERS_PATH = Constants.BASE_URL + "/users";
     public static String USERS_PARAM = Constants.BASE_URL + "/users/{param}";
 
@@ -50,7 +50,7 @@ public class JsonPlaceHolderAPI {
     @Step("Put comments")
     public void putComments(Object id, File json) {
         SerenityRest.given()
-                .pathParam("id", id)
+                .pathParam("param", id)
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -59,6 +59,6 @@ public class JsonPlaceHolderAPI {
     @Step("Delete comments")
     public void deleteComments(Object id) {
         SerenityRest.given()
-                .pathParam("id", id);
+                .pathParam("param", id);
     }
 }
