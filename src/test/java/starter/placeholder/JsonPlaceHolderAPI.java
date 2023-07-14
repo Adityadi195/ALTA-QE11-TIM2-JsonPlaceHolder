@@ -120,7 +120,11 @@ public class JsonPlaceHolderAPI {
     @Step("Put posts")
     public void putPosts(Object param, File json) {
         SerenityRest.given()
+
+                .pathParam("param", id)
+
                 .pathParam("param", param)
+
                 .contentType(ContentType.JSON)
                 .body(json);
     }
@@ -137,6 +141,10 @@ public class JsonPlaceHolderAPI {
     @Step("Delete posts")
     public static void deletePosts(Object param) {
         SerenityRest.given()
+
+                .pathParam("param", id);
+
                 .pathParam("param", param);
+
     }
 }
